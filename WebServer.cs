@@ -8,7 +8,7 @@ public class WebServer{
 	private readonly Markov markov;
 	private readonly string webRoot;
 
-	public WebServer(Markov markov, string webRoot, string prefix = "http://localhost:5000/"){
+	public WebServer(Markov markov, string webRoot, string prefix = "http://*:5000/"){
 		this.markov = markov;
 		this.webRoot = Path.GetFullPath(webRoot);
 		listener = new HttpListener();
