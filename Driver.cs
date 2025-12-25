@@ -5,7 +5,43 @@ namespace DriverApplication
 		static void Main(String[] args){
 			Markov m = new Markov();
 			m.generateMarkovModel();
-			m.generateNewName();
+
+			Console.WriteLine("=== Name Generator ===");
+			Console.WriteLine("Generate unique names based on the sample list.");
+
+			while(true){
+				Console.WriteLine();
+				Console.WriteLine("1) Generate a new name");
+				Console.WriteLine("2) Generate multiple names");
+				Console.WriteLine("3) Exit");
+				Console.Write("Choose an option: ");
+
+				string choice = Console.ReadLine();
+				if(choice == "1"){
+					string name = m.generateNewName();
+					Console.WriteLine("Generated: " + name);
+				}
+				else if(choice == "2"){
+					Console.Write("How many names? ");
+					string countInput = Console.ReadLine();
+					if(int.TryParse(countInput, out int count) && count > 0){
+						for(int i = 0; i < count; i++){
+							string name = m.generateNewName();
+							Console.WriteLine((i + 1) + ". " + name);
+						}
+					}
+					else{
+						Console.WriteLine("Please enter a positive number.");
+					}
+				}
+				else if(choice == "3"){
+					Console.WriteLine("Goodbye!");
+					break;
+				}
+				else{
+					Console.WriteLine("Invalid option. Please choose 1, 2, or 3.");
+				}
+			}
 		}
 	}
 }
