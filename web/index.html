@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Name Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Name Generator</h1>
+      <p>Create unique names using the C# Markov generator.</p>
+    </header>
+
+    <section class="card">
+      <div class="result" id="result">Click generate to get a name.</div>
+      <div class="actions">
+        <button id="generate">Generate Name</button>
+        <button id="clear" class="secondary">Clear</button>
+      </div>
+    </section>
+
+    <section class="history card">
+      <h2>Generated Names</h2>
+      <ul id="history"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
