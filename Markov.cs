@@ -51,7 +51,7 @@ using System.Collections.Generic;
 				
 			}
 		}
-		public void generateNewName(){
+		public string generateNewName(){
 			string name = order;
 			string temp = name;
 			Random r = new Random();
@@ -75,7 +75,7 @@ using System.Collections.Generic;
 				
 			}
 			name = name.Substring(2);
-			Console.WriteLine(name);
+			return name;
 		}
 		public bool checkIfUniqueName(String name){
 			name = name + "_";
