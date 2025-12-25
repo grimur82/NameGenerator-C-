@@ -13,7 +13,8 @@ namespace DriverApplication
 				Console.WriteLine();
 				Console.WriteLine("1) Generate a new name");
 				Console.WriteLine("2) Generate multiple names");
-				Console.WriteLine("3) Exit");
+				Console.WriteLine("3) Start web UI");
+				Console.WriteLine("4) Exit");
 				Console.Write("Choose an option: ");
 
 				string choice = Console.ReadLine();
@@ -35,11 +36,15 @@ namespace DriverApplication
 					}
 				}
 				else if(choice == "3"){
+					WebServer server = new WebServer(m, "web");
+					server.Start();
+				}
+				else if(choice == "4"){
 					Console.WriteLine("Goodbye!");
 					break;
 				}
 				else{
-					Console.WriteLine("Invalid option. Please choose 1, 2, or 3.");
+					Console.WriteLine("Invalid option. Please choose 1, 2, 3, or 4.");
 				}
 			}
 		}
